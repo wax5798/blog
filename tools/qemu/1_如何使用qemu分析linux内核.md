@@ -19,7 +19,10 @@ h4 {
 }
 </style>
 
-Release log:
+Release log:  
+> 2021-04-18 日: 完成初版  
+
+[原文地址](https://github.com/wax5798/blog/blob/master/tools/qemu/1_%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8qemu%E5%88%86%E6%9E%90linux%E5%86%85%E6%A0%B8.md)
 
 # 如何使用 qemu + gdb 分析 Linux 内核代码
 

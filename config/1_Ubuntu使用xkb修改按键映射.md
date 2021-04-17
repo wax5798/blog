@@ -22,6 +22,8 @@ h4 {
 Release log:  
 > 2021-04-18 日: 完成初版
 
+[原文地址](https://github.com/wax5798/blog/blob/master/config/1_Ubuntu%E4%BD%BF%E7%94%A8xkb%E4%BF%AE%E6%94%B9%E6%8C%89%E9%94%AE%E6%98%A0%E5%B0%84.md)
+
 # Ubuntu使用xkb修改按键映射
 
 ## 目的
