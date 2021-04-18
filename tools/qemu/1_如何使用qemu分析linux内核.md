@@ -26,6 +26,9 @@ Release log:
 
 # 如何使用 qemu + gdb 分析 Linux 内核代码
 
+## 参考
+《庖丁解牛Linux内核分析》
+
 ## 环境说明
 > 操作系统:			Ubuntu 20.04.2 LTS(lsb_release  -a)  
 > 内核版本:			5.4.0-58-generic(uname -a)   
@@ -145,6 +148,3 @@ ramdisk_execute_command 指向 "init"，即我们前面创建的可执行文件�
 > 1、编译内核时遇到一些编译问题，把 gcc 版本降到 4.7.4 之后解决了  
 > 2、使用 gcc -m32 选项编译 init.c 时，会提示错误: skipping incompatible /usr/lib/gcc/x86_64-linux-gnu/4.7/libgcc.a when searching for -lgcc。原因是没有安装 lib32gcc-4.7-dev，并且 ubuntu 20.04 中 apt 不能直接安装这个库。此处可以使用 gcc-9 -m32 来编译  
 > 3、使用 qemu 直接加载内核时，会以图形化界面运行。如果鼠标点击 qemu，鼠标和键盘都会被 qemu 占用且不能切换出来。试了网上的很多方法都不顶用（比如，先按 Ctrl-a，再按 x；比如 Ctrl-Alt）。只能使用 Ctrl-Alt-q 强制关闭 qemu。目前没有找到在不强制关闭 qemu 的情况下，在 qemu 与主机之间自由切换鼠标的方法。如果有知道的朋友，望告知，谢谢
-
-## 参考
-《庖丁解牛Linux内核分析》

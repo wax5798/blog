@@ -20,7 +20,8 @@ h4 {
 </style>
 
 Release log:  
-> 2021-04-18 日: 完成初版
+> 2018-02-01 四: 完成初版  
+> 2021-04-18 日: 更新格式
 
 [原文地址](https://github.com/wax5798/blog/blob/master/config/1_Ubuntu%E4%BD%BF%E7%94%A8xkb%E4%BF%AE%E6%94%B9%E6%8C%89%E9%94%AE%E6%98%A0%E5%B0%84.md)
 
