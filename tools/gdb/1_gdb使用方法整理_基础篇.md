@@ -20,15 +20,21 @@ h4 {
 </style>
 
 Release log:
+> 2021-04-18 日: 完成初版  
 
-本文参考: https://blog.csdn.net/niyaozuozuihao/article/details/91802994  
-在此基础上有些删减
+[原文地址](https://github.com/wax5798/blog/blob/master/tools/gdb/1_gdb%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86_%E5%9F%BA%E7%A1%80%E7%AF%87.md)
 
 # gdb 使用方法整理(基础篇)
 最近想要学习 Linux 内核，但是如果单纯的通过看书和代码来学习，会显得很枯燥，并且有些地方不容易理解。所以决定使用 qemu + gdb 的方式来跟进内核代码流程。关于怎么使用 qemu + gdb，可以 [点击这里](https://blog.csdn.net/weixin_40407199/article/details/115808274?spm=1001.2014.3001.5502)
 
 为了能够更高效的使用 gdb 跟进代码，需要重新整理一下 gdb 的使用方法。因为本人之前对 gdb 有一定了解，这里的主要目标是做一个知识的整理方便以后查询，不会细讲。新手请忽略本文
 
+## 参考资料
+https://blog.csdn.net/niyaozuozuihao/article/details/91802994  
+https://blog.csdn.net/whlloveblog/article/details/48090567  
+https://blog.csdn.net/zhaoxd200808501/article/details/77838933  
+http://blog.chinaunix.net/uid-1877180-id-303313.html?/2890.html  
+https://blog.csdn.net/dark_sea/article/details/26618261  
 
 ## 程序断点设置
 设置断点的常规用法: `b(break 的简写) + 行号` 或者 `b + 函数名`(同名函数会被同时标记)  
@@ -55,6 +61,9 @@ quit(简写为 q): 退出gdb
 
 ## 查看运行信息
 print + 表达式: 简写为 p，表达式可以是任何有效表达式，比如变量、函数调用等  
+print *name@len: 打印内存  
+x/FMT ADDRESS: 打印内存，可以使用 help x 查看详细说明  
+printf "printf format string", arg1, arg2, arg3, ..., argn: 格式化输出，注意这里是 printf 而不是 print  
 display + 表达式: 在单步运行时将非常有用，使用display命令设置一个表达式后，它将在每次单步进行指令后，紧接着输出被设置的表达式及值  
 watch 表达式: 设置一个监视点，一旦被监视的“表达式”的值改变，gdb 将强行终止正在被调试的程序。如： watch a  
 whatis: 查询变量或函数  

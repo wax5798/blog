@@ -19,10 +19,11 @@ static void localFunc()
 int main(int argc, char *argv[])
 {
 	int a = 1, b = 2, c = 0;
+	int *p = &a;
 
 	localFunc();
 	c = addFunc(a, b);
 
-	printf("a = %d, b = %d, c = %d\n", a, b, c);
+	printf("a = %d, b = %d, c = %d, *p = %d\n", a, b, c, *p);
 	return 0;
 }
