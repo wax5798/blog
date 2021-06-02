@@ -174,20 +174,6 @@ $ gdb
 
 ramdisk_execute_command 指向 "init"，即我们前面创建的可执行文件。调用 run_init_process 创建 init 进程
 
-## 使用 busybox 制作根文件系统
-此部分内容参考 https://www.anquanke.com/post/id/85837
-
-步骤如下:
-1. 到网站下载 busybox 源码(我这里使用的是 1.33.0): https://busybox.net/downloads/
-- 解压: tar -xvjf busybox-1.33.0.tar.bz2
-- 配置 busybox，使用静态编译: make ARCH=i386 menuconfig
-	在配置界面:
-	```
-	Settings --->
-		[*] Build static binary (no shared libs)
-	```
-- 编译 busybox: make ARCH=i386
-
 ## 小知识
 #### 区分 vmlinux bzImage zImage
 > vmlinux 是编译出来的最原始的 ELF 文件  
