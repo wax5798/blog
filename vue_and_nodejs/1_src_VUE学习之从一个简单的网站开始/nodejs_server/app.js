@@ -33,5 +33,6 @@ app.use('/users', usersRouter);
 
 app.get("/axios/test", test.getMethodTest);
 app.post("/axios/test", test.postMethodTest);
+app.get("/download/test.zip", test.downloadMethodTest);
 
 module.exports = app;

@@ -29,11 +29,12 @@
     </ul>
     <el-button @click="getTest">getTest</el-button>
     <el-button @click="postTest">postTest</el-button>
+    <el-button @click="downloadTest">downloadTest</el-button>
   </div>
 </template>
 
 <script>
-import { axiosGetTest, axiosPostTest } from "../utils/request";
+import { axiosGetTest, axiosPostTest, downloadRequest } from "../utils/request";
 
 export default {
   name: 'HelloWorld',
@@ -54,6 +55,14 @@ export default {
         alert("get data: " + data);
       }, (code, message) => {
         alert("error code " + code + ", message " + message);
+      });
+    }, 
+
+    downloadTest() {
+      downloadRequest((data) => {
+        console.log("get content size: " + data.length);
+      }, (error) => {
+        console.log("error msg: " + error);
       });
     }
   }
