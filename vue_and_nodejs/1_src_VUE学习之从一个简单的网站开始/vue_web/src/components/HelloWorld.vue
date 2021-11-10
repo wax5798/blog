@@ -27,14 +27,35 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <el-button @click="getTest">getTest</el-button>
+    <el-button @click="postTest">postTest</el-button>
   </div>
 </template>
 
 <script>
+import { axiosGetTest, axiosPostTest } from "../utils/request";
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    getTest() {
+      axiosGetTest((data) => {
+        alert("get data: " + data);
+      }, (code, message) => {
+        alert("error code " + code + ", message " + message);
+      });
+    },
+
+    postTest() {
+      axiosPostTest({data: "post request"}, (data) => {
+        alert("get data: " + data);
+      }, (code, message) => {
+        alert("error code " + code + ", message " + message);
+      });
+    }
   }
 }
 </script>
